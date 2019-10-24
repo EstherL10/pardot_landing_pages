@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<base href="http://go.pardot.com" >
+
+		<meta charset="utf-8"/>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<meta name="description" content="%%description%%"/>
+
+		<title>%%title%%</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+
+
+
+		<style>
+
+		
+
+		    /*-----------------------------------------*/
+
+		    /* Use this section to change your colors! */
+
+		    /*-----------------------------------------*/		
+
+		            :root {
+
+                --field-labels: #ffffff;
+
+                --field-background:#ffffff;
+
+                --field-border: #7dad3f;
+
+                --field-text: #72b1c8;
+
+                --button-background-normal: #5b5b5b;
+
+                --button-text-normal: #ffffff;
+
+                --button-background-hover: #72b1c8;
+
+                --button-text-hover: #ffffff;
+
+                --form-background: #003b4c;
+
+                --main-header: #003b4c;
+
+                --sub-header: #72b1c8;
+
+            }
+
+            
+
+            
+
+		    /*----------------------------------*/
+
+		    /*           Form Styling           */
+
+		    /*----------------------------------*/
+
+		    
+
+		    form.form{margin:20px!important; padding:0!important;}
+
+		    
+
+		    /*font styles for above & below form content*/
+
+		    form.form p, form.form li, form.form span, form.form h1, form.form h2, form.form h3, form.form h4{font-family: 'Open Sans', sans-serif; line-height:1.5em;}
+
+		    form.form p, form.form li{font-size:16px; color:#ffffff;}
+
+		    form.form h1{font-size:32px; color:#000000; font-weight:700;}
+
+		    form.form h2{font-size:28px; color:#000000;}
+
+		    form.form h3{font-size:24px; color:#000000; font-weight:700;}
+
+		    form.form h4{font-size:20px; color:#000000;}
+
+		    
+
+		    /*Field stylings default to two column layout*/		    
+
+		    form.form p.form-field {width:97.5%!important; margin:0 .5%!important; display:block;}
+
+		    form.form p label{font-family: 'Open Sans', sans-serif; line-height:1.5em; font-size:16px; color:var(--field-labels)!important; font-weight:700; width:100%!important; text-align:left!important;}
+
+		    form.form p span span label{font-family: 'Open Sans', sans-serif; line-height:1.5em; font-size:12px; color:var(--field-labels)!important; vertical-align:bottom!important; position:relative; top:-2px;}
+
+		    form.form p span{margin:0!important; width:100%;}
+
+		    form.form p span span{width:100%;}
+
+		    form.form p.fullWidth span span{width:33%;min-width:245px;}
+
+		    form.form p input.text, form.form p select, form.form p textarea.standard{font-family: 'Open Sans', sans-serif; line-height:1.5em; font-size:16px; background-color:var(--field-background); color:var(--field-text); border:1.5px solid var(--field-border); border-radius:4px; width:100%; height:40px; box-sizing:border-box; padding:7px!important;}
+
+		    form.form p textarea.standard{height:80px!important;}
+
+		    
+
+		    /*Error and Description Styling*/
+
+		    form.form p.errors{display:block; width:98%;}
+
+		    form.form p.error.no-label{display:none;}
+
+		    form.form span.error{margin:0 .2em!important; padding:0!important;}
+
+		    form.form p span p.error{margin:0 1%;}
+
+		    form.form p span.description{margin-left:.2em!important;color:#999999;}
+
+
+
+		    /*Add fullWidth class in advanced tab of form builder to make field full width of form*/		    
+
+		    form.form p.fullWidth {width:97.5%!important; margin:0 .5%!important; display:block!important;}
+
+
+
+		    /*Submit button styling*/		    
+
+		    form.form p.submit{margin:20px 0!important; width:100%!important;}
+
+		    form.form p input[type="submit"]{font-family: 'Open Sans', sans-serif; font-size:16px; font-weight:700; width:60%; min-width:200px; height:60px; color:var(--button-text-normal); background-color:var(--button-background-normal); border-width:0; border-radius:4px; line-height:60px; display:block; margin:0 auto!important; padding:0!important;}
+
+		    form.form p input[type="submit"]:hover{color:var(--button-text-hover); background-color:var(--button-background-hover);}
+
+   
+
+		    /*----------------------------------*/
+
+		    /*         End Form Styling         */
+
+		    /*----------------------------------*/
+
+		    
+
+            body, html{margin: 0; padding: 0; position: relative; min-height:calc(100vh - 60px);}
+
+            
+
+            p, li, span, h1, h2, h3, h4{font-family: 'Open Sans', sans-serif; line-height:1.5em;}
+
+		    p, li{font-size:16px; color:#000000;}
+
+		    h1{font-size:32px; color:var(--main-header); font-weight:700; margin:0;}
+
+		    h2{font-size:28px; color:var(--main-header); margin:0;}
+
+		    h3{font-size:24px; color:var(--sub-header); font-weight:700; margin:0;}
+
+		    h4{font-size:20px; color:var(--sub-header); margin:0;}
+
+            
+
+            #header{
+
+                width:100%;
+
+                background-color:#fff;
+
+                display:block;
+
+                height:100px;
+
+            }
+
+            
+
+            #headerContent{
+
+                width:80%;
+
+                min-width:1160px;
+
+                display:block;
+
+                margin:0 auto;
+
+            }
+
+            
+
+            .extraButton{
+
+                font-family: 'Open Sans', sans-serif;
+
+                font-size:16px;
+
+                font-weight:700;
+
+                width:200px;
+
+                height:60px;
+
+                color:var(--button-text-normal);
+
+                background-color:var(--button-background-normal);
+
+                border-width:0;
+
+                border-radius:4px;
+
+                line-height:60px;
+
+                display:block;
+
+                margin:20px 0!important;
+
+                float:right;
+
+                text-decoration:none;
+
+                text-align:center;
+
+            }
+
+            
+
+            .extraButton:hover{
+
+                color:var(--button-text-hover);
+
+                background-color:var(--button-background-hover);
+
+            }
+
+            
+
+            #logo{
+
+                width:auto;
+
+                height:80px;
+
+                float:left;
+
+                display:block;
+
+                margin:10px 50px 10px 0;
+
+            }
+
+            
+
+            #title{
+
+                width:100%;
+
+                min-height:250px;
+
+                display:block;
+
+                overflow:visible;
+
+            }
+
+            
+
+            #hero{
+
+		        width:100%;
+
+		        height:0px;
+
+		        overflow:visible;
+
+		        position:relative;
+
+		        z-index:-2;
+
+		    }
+
+		    
+
+		    #titleImage{
+
+		        background-repeat: no-repeat;
+
+		        background-size:cover;
+
+		        min-height:250px;
+
+		        position:relative;
+
+		        z-index:1;
+
+		        display:block;
+
+		    }
+
+		    
+
+		    #titleImage::before{
+
+		        content:"";
+
+		        background: linear-gradient(to right, rgba(255,255,255,0.9) 30%,rgba(255,255,255,0) 100%);
+
+		        position:relative;
+
+		        z-index:5;
+
+		        width:100%;
+
+		        height:100%;
+
+		        display:block;
+
+		        min-height:250px;
+
+		    }
+
+		    
+
+		    #titleContent{
+
+                width:80%;
+
+                min-width:1160px;
+
+                margin:0 auto;
+
+                position:relative;
+
+            }
+
+            
+
+            #bodyMain{
+
+                width:100%;
+
+                display:block;
+
+                overflow:visible;
+
+            }
+
+            
+
+            #bodyMainContent{
+
+                width:80%;
+
+                min-width:1160px;
+
+                margin:0 auto;
+
+            }
+
+            
+
+            #backgroundImage{
+
+                height:0px;
+
+                width:100%;
+
+                overflow:visible;
+
+                position:relative;
+
+            }
+
+		    
+
+            #formBox{
+
+                float:right;
+
+                margin-top:-120px;
+
+                width:540px;
+
+                background-color:var(--form-background);
+
+                position:relative;
+
+                z-index:5;
+
+            }
+
+            
+
+            #content{
+
+                padding-right:560px;
+
+                margin:20px 0;
+
+                display:block;
+
+                min-height:700px;
+
+            }
+
+            
+
+            #footer{
+
+                width:100%;
+
+                display:block;
+
+                position:absolute;
+
+                bottom:0;
+
+                margin-bottom:-60px;
+
+                background-color:var(--form-background);
+
+                height:60px;
+
+            }
+
+            
+
+            #footerContent{
+
+                width:80%;
+
+                margin:0 auto;
+
+                line-height:60px;
+
+                text-align:center;
+
+                color:var(--field-labels);
+
+                font-family: 'Open Sans', sans-serif;
+
+            }
+
+            
+
+ 
+
+            @media only screen and (max-width: 1200px) {
+
+                form.form{padding:20px 0!important;}
+
+                form.form p.form-field {width:47%!important; margin:0 .9%!important; display:inline-block; vertical-align:top;}
+
+                form.form p.form-field.fullWidth{width:97.5%!important; margin:.5%!important;}
+
+                #formBox{float:none; width:100%; margin-top:0;}
+
+                #headerContent{min-width:auto;}
+
+                #bodyMainContent{min-width:auto;}
+
+                #titleContent{min-width:auto;}
+
+                #content{padding:0;}
+
+            }
+
+            
+
+             @media only screen and (max-width: 700px) {
+
+                form.form{margin-top:-1px!important;}
+
+                form.form p.form-field.fullWidth{width:97.5%!important; margin:.5%!important;}
+
+		        form.form p.form-field{width:97.5%!important; margin:.5%!important;}
+
+                #headerContent{width:95%;}
+
+                #logo{max-width:45%; height:auto; max-height:80px; margin-right:0;}
+
+                .extrabutton{width:45%;}
+
+                #titleContent{text-align:center;}
+
+                #titleContent table{width:100%;}
+
+                #titleImage::before{background: linear-gradient(to right, rgba(255,255,255,0.9) 30%,rgba(255,255,255,0.9) 100%);}
+
+                #bodyMainContent{width:100%!important; margin:0!important;}
+
+                #content{margin:20px!important;} 
+
+            }
+
+		    
+
+		</style>
+
+	</head>
+
+    <body>
+
+        <div id="header">
+
+            <div id="headerContent">
+
+                <img id="logo" pardot-region="logo" src="https://via.placeholder.com/400x150" alt=""/>
+
+                <div id="headerLink" pardot-region="headerLink"><a class="extraButton" href="wwww.google.com">I'm a button</a></div>
+
+            </div><!--end headerContent-->
+
+        </div><!--end header-->
+
+        <div id="title">
+
+        	<div id="hero" pardot-region="titleImage" pardot-region-type="HTML">
+
+	            <div id="titleImage" style="background-image:url('https://via.placeholder.com/2000x400');"></div>
+
+	        </div><!--end hero-->
+
+            <div id="titleContent">
+
+                <table style="border-spacing: 0;"><tr><td style="vertical-align:middle; height:250px;">
+
+                    <h1 pardot-region="Main Heading">I'm a title header</h1>
+
+                    <h3 pardot-region="Subheading">and I'm a snazzy subheader</h3>
+
+                </td></tr></table>
+
+            </div><!--end titleContent-->
+
+        </div><!--end title-->
+
+        <div id="bodyMain">
+
+            <div id="bodyMainContent">
+
+                <div id="formBox">%%content%%</div>
+
+                <div id="content" pardot-region="content">
+
+                    <h2>This is where your body content will go</h2>
+
+                    <p>I&#39;m a description of something you might write for a landing page. Everything in this section is fully editable using Pardot&#39;s handy-dandy WYSIWYG. Add pictures, text, bullet points, tables, even videos. Go nuts.</p>
+
+                    <ul>
+
+                        <li>Like right here</li>
+
+                        <li>I&#39;ve added</li>
+
+                        <li>Some Bullet points</li>
+
+                    </ul>
+
+                    <p style="text-align: center;"><img alt="" border="0" height="312" src="https://via.placeholder.com/312" style="width: 312px; height: 312px; border-width: 0px; border-style: solid;" width="312" /></p>
+
+                    <p style="text-align: center;">And here&#39;s a rabbit because it&#39;s cute and I can.</p>
+
+                </div><!--end Content-->
+
+            </div><!--end bodyMainContent-->
+
+        </div><!--end bodyMain-->
+
+        <div id="footer">
+
+            <div id="footerContent">
+
+                &copy; <script>document.write(new Date().getFullYear())</script>&nbsp;<div style="display:inline;" pardot-region="footer"> Company Name | <a href="www.google.com">Privacy Policy</a></div>
+
+            </div>
+
+        </div>
+
+	</body>
+
+</html>
+
